@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <aside class="sidebar">
+                <h3>Filter Products</h3>
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <ul>
+                        <li><label><input type="checkbox" name="category" value="electronics"> Electronics</label></li>
+                        <li><label><input type="checkbox" name="category" value="clothing"> Clothing</label></li>
+                        <li><label><input type="checkbox" name="category" value="books"> Books</label></li>
+                        <li><label><input type="checkbox" name="category" value="home"> Home Goods</label></li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <label for="min-price">Min:</label>
+                    <input type="range" id="min-price" name="min-price" min="0" max="1000" value="50">
+                    <span id="min-price-value">$50</span><br>
+                    <label for="max-price">Max:</label>
+                    <input type="range" id="max-price" name="max-price" min="0" max="1000" value="500">
+                    <span id="max-price-value">$500</span>
+                </div>
+                <button class="btn">Apply Filters</button>
+            </aside>
+
+            <section class="product-listing">
+                <div class="sorting-options">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by" name="sort-by">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Placeholder Product 1 -->
+                    <div class="product-item">
+                        <img src="images/product7.jpg" alt="Product 7">
+                        <h3>Product 7</h3>
+                        <p>$25.99</p>
+                        <a href="product-details.html?id=7" class="btn">View Details</a>
+                    </div>
+                    <!-- Placeholder Product 2 -->
+                    <div class="product-item">
+                        <img src="images/product8.jpg" alt="Product 8">
+                        <h3>Product 8</h3>
+                        <p>$35.50</p>
+                        <a href="product-details.html?id=8" class="btn">View Details</a>
+                    </div>
+                    <!-- Placeholder Product 3 -->
+                    <div class="product-item">
+                        <img src="images/product9.jpg" alt="Product 9">
+                        <h3>Product 9</h3>
+                        <p>$15.00</p>
+                        <a href="product-details.html?id=9" class="btn">View Details</a>
+                    </div>
+                    <!-- Placeholder Product 4 -->
+                    <div class="product-item">
+                        <img src="images/product10.jpg" alt="Product 10">
+                        <h3>Product 10</h3>
+                        <p>$99.99</p>
+                        <a href="product-details.html?id=10" class="btn">View Details</a>
+                    </div>
+                    <!-- Add more products as needed -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Basic script for price range sliders
+        const minPrice = document.getElementById('min-price');
+        const minPriceValue = document.getElementById('min-price-value');
+        const maxPrice = document.getElementById('max-price');
+        const maxPriceValue = document.getElementById('max-price-value');
+
+        if(minPrice && minPriceValue) {
+            minPriceValue.textContent = `$${minPrice.value}`;
+            minPrice.oninput = function() {
+                minPriceValue.textContent = `$${this.value}`;
+            }
+        }
+        if(maxPrice && maxPriceValue) {
+            maxPriceValue.textContent = `$${maxPrice.value}`;
+            maxPrice.oninput = function() {
+                maxPriceValue.textContent = `$${this.value}`;
+            }
+        }
+    </script>
+</body>
+</html>

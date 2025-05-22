@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - E-commerce Store</title>
+    <link rel="stylesheet" href="../css/admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Panel</h2>
+                <button class="admin-sidebar-toggle" aria-controls="admin-sidebar" aria-expanded="true">
+                    <span class="sr-only">Toggle Admin Menu</span>
+                    ☰ {/* Or an SVG icon */}
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html" class="active"><i class="icon-dashboard"></i> Dashboard Overview</a></li>
+                    <li><a href="manage-products.html"><i class="icon-box"></i> Product Management</a></li>
+                    <li><a href="manage-orders.html"><i class="icon-cart"></i> Order Management</a></li>
+                    <li><a href="manage-users.html"><i class="icon-users"></i> Customer Management</a></li>
+                    <li><a href="#sales-analytics"><i class="icon-graph"></i> Sales Analytics</a></li>
+                    <li><a href="../index.html" target="_blank"><i class="icon-logout"></i> View Main Site</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Dashboard Overview</h1>
+                <div class="admin-user-info">
+                    <button id="admin-night-mode-toggle" aria-label="Toggle Night Mode">🌙</button>
+                    <span>Welcome, AdminUser!</span>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+
+            <section id="dashboard-overview" class="admin-section">
+                <h2>Store Summary</h2>
+                <div class="stats-cards">
+                    <div class="card">
+                        <h3>Total Sales</h3>
+                        <p>$15,234.50</p>
+                    </div>
+                    <div class="card">
+                        <h3>New Orders</h3>
+                        <p>75</p>
+                    </div>
+                    <div class="card">
+                        <h3>New Customers</h3>
+                        <p>32</p>
+                    </div>
+                    <div class="card">
+                        <h3>Products in Stock</h3>
+                        <p>1,280</p>
+                    </div>
+                </div>
+                
+                <h3>Recent Activity (Placeholder)</h3>
+                <ul>
+                    <li>New order #1234 placed by John Doe.</li>
+                    <li>Product "SuperWidget" stock updated.</li>
+                    <li>New user registered: jane.doe@example.com</li>
+                </ul>
+            </section>
+             <!-- Placeholder for Sales Analytics, can be integrated or a separate page -->
+            <section id="sales-analytics" class="admin-section" style="display: none;">
+                 <h2>Sales Analytics (Placeholder)</h2>
+                 <p>Detailed charts and reports will be shown here.</p>
+            </section>
+        </main>
+    </div>
+    <script src="../js/admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wish List - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>My Wish List</h2>
+            <p class="breadcrumb"><a href="account.html">Account</a> &gt; Wish List</p>
+            <div class="wish-list-items">
+                <!-- Placeholder Wish List Item 1 -->
+                <div class="wish-list-item product-item"> <!-- Re-use product-item styling if suitable -->
+                    <img src="images/product_wish1.jpg" alt="Product Wish 1">
+                    <h3>Product Name A</h3>
+                    <p>$49.99</p>
+                    <button class="btn">Add to Cart</button>
+                    <button class="btn btn-danger btn-sm remove-wishlist-item">Remove</button>
+                </div>
+                <!-- Placeholder Wish List Item 2 -->
+                <div class="wish-list-item product-item">
+                    <img src="images/product_wish2.jpg" alt="Product Wish 2">
+                    <h3>Product Name B</h3>
+                    <p>$19.99</p>
+                    <button class="btn">Add to Cart</button>
+                    <button class="btn btn-danger btn-sm remove-wishlist-item">Remove</button>
+                </div>
+                <!-- Placeholder Wish List Item 3 -->
+                <div class="wish-list-item product-item">
+                    <img src="images/product_wish3.jpg" alt="Product Wish 3">
+                    <h3>Product Name C</h3>
+                    <p>$129.00</p>
+                    <button class="btn">Add to Cart</button>
+                    <button class="btn btn-danger btn-sm remove-wishlist-item">Remove</button>
+                </div>
+            </div>
+            <p id="empty-wishlist-message" style="display:none;">Your wish list is currently empty.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

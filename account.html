@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Login/Register Section - Visible when not logged in -->
+            <section id="auth-section">
+                <div class="auth-forms">
+                    <div class="form-container" id="login-form-container">
+                        <h2>Login</h2>
+                        <form id="login-form">
+                            <div>
+                                <label for="login-email">Email or Username:</label>
+                                <input type="text" id="login-email" name="login-email" required>
+                            </div>
+                            <div>
+                                <label for="login-password">Password:</label>
+                                <input type="password" id="login-password" name="login-password" required>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                            <p class="form-message" id="login-message"></p>
+                        </form>
+                        <p>Don't have an account? <a href="#" id="show-register-form">Register here</a></p>
+                    </div>
+
+                    <div class="form-container" id="register-form-container" style="display:none;">
+                        <h2>Register</h2>
+                        <form id="register-form">
+                            <div>
+                                <label for="register-name">Full Name:</label>
+                                <input type="text" id="register-name" name="register-name" required>
+                            </div>
+                            <div>
+                                <label for="register-email">Email Address:</label>
+                                <input type="email" id="register-email" name="register-email" required>
+                            </div>
+                            <div>
+                                <label for="register-password">Password:</label>
+                                <input type="password" id="register-password" name="register-password" required minlength="6">
+                            </div>
+                            <div>
+                                <label for="register-confirm-password">Confirm Password:</label>
+                                <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+                            </div>
+                            <button type="submit" class="btn">Register</button>
+                            <p class="form-message" id="register-message"></p>
+                        </form>
+                        <p>Already have an account? <a href="#" id="show-login-form">Login here</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Dashboard Section - Visible when logged in -->
+            <section id="dashboard-section" style="display:none;">
+                <h2 id="welcome-message">Welcome, [User Name]!</h2>
+                <p>From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
+                
+                <nav class="dashboard-nav">
+                    <ul>
+                        <li><a href="order-history.html" class="btn">Order History</a></li>
+                        <li><a href="saved-addresses.html" class="btn">Saved Addresses</a></li>
+                        <li><a href="wish-list.html" class="btn">My Wish List</a></li>
+                        <li><button id="logout-button" class="btn btn-danger">Logout</button></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Specific JS for account page logic will be in script.js -->
+</body>
+</html>

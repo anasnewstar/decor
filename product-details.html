@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="product-details-layout">
+                <section class="product-gallery">
+                    <img src="images/product_large.jpg" alt="Product Main Image" id="main-product-image" class="main-image">
+                    <div class="thumbnail-images">
+                        <img src="images/product_thumb1.jpg" alt="Product Thumbnail 1" class="thumbnail" onclick="document.getElementById('main-product-image').src='images/product_thumb1.jpg'">
+                        <img src="images/product_thumb2.jpg" alt="Product Thumbnail 2" class="thumbnail" onclick="document.getElementById('main-product-image').src='images/product_thumb2.jpg'">
+                        <img src="images/product_thumb3.jpg" alt="Product Thumbnail 3" class="thumbnail" onclick="document.getElementById('main-product-image').src='images/product_thumb3.jpg'">
+                    </div>
+                </section>
+
+                <section class="product-info">
+                    <h1>Product Name Placeholder</h1>
+                    <p class="price">$79.99</p>
+                    <p class="description">
+                        This is a detailed description of the product. It highlights key features, benefits, and materials.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <h3>Specifications:</h3>
+                    <ul>
+                        <li>Feature 1: Value</li>
+                        <li>Feature 2: Value</li>
+                        <li>Feature 3: Value</li>
+                        <li>Material: High-quality material</li>
+                        <li>Dimensions: Xcm x Ycm x Zcm</li>
+                    </ul>
+                    <div class="product-actions">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </section>
+            </div>
+
+            <section class="customer-reviews">
+                <h2>Customer Reviews</h2>
+                <div class="review">
+                    <h4>Jane Doe - <span class="stars">★★★★☆</span></h4>
+                    <p>"Great product! High quality and works as expected. Would recommend."</p>
+                    <small>Posted on: January 15, 2024</small>
+                </div>
+                <div class="review">
+                    <h4>John Smith - <span class="stars">★★★★★</span></h4>
+                    <p>"Excellent value for money. Fast shipping too!"</p>
+                    <small>Posted on: January 20, 2024</small>
+                </div>
+                <div class="add-review">
+                    <h3>Leave a Review</h3>
+                    <form>
+                        <div>
+                            <label for="reviewer-name">Name:</label>
+                            <input type="text" id="reviewer-name" name="reviewer-name">
+                        </div>
+                        <div>
+                            <label for="rating">Rating:</label>
+                            <select id="rating" name="rating">
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="1">1 Star</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="review-text">Review:</label>
+                            <textarea id="review-text" name="review-text" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Review</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

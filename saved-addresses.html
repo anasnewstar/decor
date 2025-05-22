@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Addresses - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Your Saved Addresses</h2>
+            <p class="breadcrumb"><a href="account.html">Account</a> &gt; Saved Addresses</p>
+
+            <div class="saved-addresses-list">
+                <!-- Placeholder Address 1 -->
+                <div class="address-item">
+                    <h4>Default Shipping Address</h4>
+                    <p>John Doe<br>
+                       123 Main Street<br>
+                       Anytown, USA 12345</p>
+                    <button class="btn btn-sm">Edit</button>
+                    <button class="btn btn-sm btn-danger">Remove</button>
+                </div>
+                <!-- Placeholder Address 2 -->
+                <div class="address-item">
+                    <h4>Work Address</h4>
+                    <p>John Doe<br>
+                       789 Business Rd, Suite 500<br>
+                       Businesstown, USA 54321</p>
+                    <button class="btn btn-sm">Edit</button>
+                    <button class="btn btn-sm btn-danger">Remove</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3>Add New Address</h3>
+            <form id="add-address-form">
+                <div>
+                    <label for="address-fullName">Full Name:</label>
+                    <input type="text" id="address-fullName" name="fullName" required>
+                </div>
+                <div>
+                    <label for="address-address">Address Line 1:</label>
+                    <input type="text" id="address-address" name="address" required>
+                </div>
+                <div>
+                    <label for="address-city">City:</label>
+                    <input type="text" id="address-city" name="city" required>
+                </div>
+                <div>
+                    <label for="address-postalCode">Postal Code:</label>
+                    <input type="text" id="address-postalCode" name="postalCode" required>
+                </div>
+                <div>
+                    <label for="address-country">Country:</label>
+                    <input type="text" id="address-country" name="country" required>
+                </div>
+                <div>
+                    <label for="address-phone">Phone Number:</label>
+                    <input type="tel" id="address-phone" name="phone">
+                </div>
+                <div>
+                    <input type="checkbox" id="make-default" name="makeDefault">
+                    <label for="make-default" style="display:inline;">Make this my default address</label>
+                </div>
+                <button type="submit" class="btn">Save Address</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
