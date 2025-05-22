@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Checkout Process</h2>
+            <form id="checkout-form">
+                <!-- Step 1: Shipping Information -->
+                <div class="checkout-step" id="step-shipping">
+                    <h3>1. Shipping Information</h3>
+                    <div>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div>
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div>
+                        <label for="postalCode">Postal Code:</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                    <div>
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <button type="button" class="btn next-step" onclick="goToStep('payment')">Next: Payment</button>
+                </div>
+
+                <!-- Step 2: Payment Information -->
+                <div class="checkout-step" id="step-payment" style="display:none;">
+                    <h3>2. Payment Information</h3>
+                    <div class="payment-method-selection">
+                        <p>Select Payment Method:</p>
+                        <label><input type="radio" name="paymentMethod" value="bkash" checked> bKash</label>
+                        <label><input type="radio" name="paymentMethod" value="visa"> Visa</label>
+                        <label><input type="radio" name="paymentMethod" value="mastercard"> Mastercard</label>
+                    </div>
+
+                    <div id="bkash-details" class="payment-details">
+                        <h4>bKash Payment</h4>
+                        <div>
+                            <label for="bkashNumber">bKash Number:</label>
+                            <input type="tel" id="bkashNumber" name="bkashNumber" placeholder="e.g., 01XXXXXXXXX">
+                        </div>
+                        <button type="button" class="btn" id="verifyBkash" style="margin-top:10px;">Verify Payment</button>
+                        <p class="payment-instruction"><em>A mock verification step. No actual OTP will be sent.</em></p>
+                    </div>
+
+                    <div id="card-details" class="payment-details" style="display:none;">
+                        <h4>Card Payment</h4>
+                        <div>
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX">
+                        </div>
+                        <div>
+                            <label for="expiryDate">Expiry Date:</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                        </div>
+                        <div>
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="XXX">
+                        </div>
+                    </div>
+                    <p id="payment-message" style="margin-top:15px; font-weight:bold;"></p>
+                    <button type="button" class="btn prev-step" onclick="goToStep('shipping')">Back: Shipping</button>
+                    <button type="button" class="btn next-step" onclick="goToStep('review')">Next: Review Order</button>
+                </div>
+
+                <!-- Step 3: Order Review -->
+                <div class="checkout-step" id="step-review" style="display:none;">
+                    <h3>3. Order Review</h3>
+                    <div id="order-summary">
+                        <h4>Shipping Address:</h4>
+                        <p id="review-shipping-address">Your shipping details will appear here.</p>
+                        <h4>Payment Method:</h4>
+                        <p id="review-payment-method">Your chosen payment method will appear here.</p>
+                        <h4>Items:</h4>
+                        <p id="review-items">Your cart items will appear here.</p> <!-- To be populated by JS -->
+                        <h4>Total:</h4>
+                        <p id="review-total">Your cart total will appear here.</p> <!-- To be populated by JS -->
+                    </div>
+                    <button type="button" class="btn prev-step" onclick="goToStep('payment')">Back: Payment</button>
+                    <button type="submit" class="btn">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Inline script moved to js/script.js -->
+</body>
+</html>

@@ -1,0 +1,492 @@
+/* Admin Panel CSS Variables */
+:root {
+    --admin-primary-bg: #f0f2f5;
+    --admin-secondary-bg: #fff;
+    --admin-sidebar-bg: #2c3e50;
+    --admin-sidebar-text: #ecf0f1;
+    --admin-sidebar-active-bg: #34495e;
+    --admin-sidebar-active-border: #1abc9c; /* Teal accent */
+    --admin-header-bg: #fff;
+    --admin-header-text: #2c3e50;
+    --admin-text-color: #333;
+    --admin-heading-color: #34495e;
+    --admin-border-color: #ddd;
+    --admin-table-header-bg: #34495e;
+    --admin-table-header-text: #fff;
+    --admin-table-row-even-bg: #f9f9f9;
+    --admin-table-row-hover-bg: #f1f1f1;
+    --admin-button-primary-bg: #3498db; /* Blue */
+    --admin-button-primary-hover-bg: #2980b9;
+    --admin-button-secondary-bg: #bdc3c7; /* Light Grey */
+    --admin-button-secondary-hover-bg: #95a5a6;
+    --admin-button-danger-bg: #e74c3c; /* Red */
+    --admin-button-danger-hover-bg: #c0392b;
+    --admin-button-text: #fff; /* Default for primary/danger */
+    --admin-link-color: #007bff;
+    --admin-card-bg: #fff; /* For stats cards etc. */
+    --admin-card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --admin-input-bg: #fff;
+    --admin-input-border: #ccc;
+    --admin-input-text: #333;
+    --transition-speed: 0.3s;
+}
+
+body.admin-night-mode {
+    --admin-primary-bg: #1a1e25;
+    --admin-secondary-bg: #242a38;
+    --admin-sidebar-bg: #1e222c;
+    --admin-sidebar-text: #d0d2d6;
+    --admin-sidebar-active-bg: #2c313f;
+    --admin-sidebar-active-border: #00aaff; /* Brighter blue for night mode accent */
+    --admin-header-bg: #242a38;
+    --admin-header-text: #d0d2d6;
+    --admin-text-color: #d0d2d6;
+    --admin-heading-color: #e0e0e0;
+    --admin-border-color: #404859;
+    --admin-table-header-bg: #2c313f;
+    --admin-table-header-text: #d0d2d6;
+    --admin-table-row-even-bg: #2a2f3c;
+    --admin-table-row-hover-bg: #313745;
+    --admin-button-primary-bg: #00aaff;
+    --admin-button-primary-hover-bg: #0077cc;
+    --admin-button-secondary-bg: #4a5568;
+    --admin-button-secondary-hover-bg: #3a4354;
+    --admin-button-danger-bg: #ff4c4c;
+    --admin-button-danger-hover-bg: #cc0000;
+    --admin-button-text: #1a1e25; /* Dark text on light buttons in night mode */
+    --admin-link-color: #00aaff;
+    --admin-card-bg: #242a38;
+    --admin-card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --admin-input-bg: #2c313f;
+    --admin-input-border: #404859;
+    --admin-input-text: #d0d2d6;
+}
+
+/* Admin Panel Styles */
+body { /* Applied to admin HTML pages, assuming they have a specific class or are standalone */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--admin-primary-bg);
+    color: var(--admin-text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 250px;
+    background-color: var(--admin-sidebar-bg);
+    color: var(--admin-sidebar-text);
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: background-color var(--transition-speed), color var(--transition-speed), left var(--transition-speed);
+}
+
+.sidebar-header h2 {
+    text-align: center;
+    color: var(--admin-sidebar-text); /* Use variable */
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--admin-sidebar-text);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color var(--transition-speed), padding-left var(--transition-speed), color var(--transition-speed);
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background-color: var(--admin-sidebar-active-bg);
+    color: #fff; /* Active link text can be brighter */
+    padding-left: 25px;
+    border-left: 3px solid var(--admin-sidebar-active-border);
+}
+
+.sidebar-nav ul li a i {
+    margin-right: 10px;
+}
+
+/* Main Content Area */
+.admin-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Same as sidebar width */
+    background-color: var(--admin-primary-bg); /* Match body background */
+    transition: margin-left var(--transition-speed), background-color var(--transition-speed);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--admin-header-bg);
+    border-bottom: 1px solid var(--admin-border-color);
+    margin-bottom: 20px;
+    box-shadow: var(--admin-card-shadow);
+    transition: background-color var(--transition-speed), border-bottom-color var(--transition-speed);
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--admin-heading-color);
+    transition: color var(--transition-speed);
+}
+
+.admin-user-info span {
+    margin-right: 15px;
+}
+.admin-user-info a {
+    color: var(--admin-link-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+.admin-user-info a:hover {
+    text-decoration: underline;
+}
+#admin-night-mode-toggle { /* Specific for admin toggle */
+    background: none;
+    border: 1px solid var(--admin-header-text);
+    color: var(--admin-header-text);
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+#admin-night-mode-toggle:hover {
+    background-color: var(--admin-header-text);
+    color: var(--admin-header-bg);
+}
+
+
+/* Admin Sections */
+.admin-section {
+    background-color: var(--admin-secondary-bg);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--admin-card-shadow);
+    margin-bottom: 20px;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+.admin-section h2 {
+    margin-top: 0;
+    color: var(--admin-heading-color);
+    border-bottom: 1px solid var(--admin-border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    transition: color var(--transition-speed), border-bottom-color var(--transition-speed);
+}
+
+/* Stats Cards */
+.stats-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stats-cards .card {
+    color: #fff; /* Text color is usually white on these colored cards */
+    padding: 20px;
+    border-radius: 5px;
+    flex-grow: 1;
+    min-width: 200px;
+    box-shadow: var(--admin-card-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.stats-cards .card:hover {
+    transform: translateY(-3px);
+}
+.stats-cards .card:nth-child(1) { background-color: #1abc9c; } /* Teal */
+.stats-cards .card:nth-child(2) { background-color: #3498db; } /* Blue */
+.stats-cards .card:nth-child(3) { background-color: #9b59b6; } /* Purple */
+.stats-cards .card:nth-child(4) { background-color: #e67e22; } /* Orange */
+
+.stats-cards .card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+.stats-cards .card p {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+/* Data Tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid var(--admin-border-color);
+    padding: 12px;
+    text-align: left;
+    transition: border-color var(--transition-speed), background-color var(--transition-speed);
+}
+
+.data-table thead th {
+    background-color: var(--admin-table-header-bg);
+    color: var(--admin-table-header-text);
+    font-weight: bold;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: var(--admin-table-row-even-bg);
+}
+.data-table tbody tr:hover {
+    background-color: var(--admin-table-row-hover-bg);
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    color: var(--admin-button-text); /* Default button text color */
+}
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: var(--admin-button-primary-bg);
+}
+.btn-primary:hover { background-color: var(--admin-button-primary-hover-bg); }
+
+.btn-secondary {
+    background-color: var(--admin-button-secondary-bg);
+    color: var(--admin-text-color); /* Text color for secondary buttons might differ */
+}
+body.admin-night-mode .btn-secondary {
+    color: var(--admin-sidebar-text); /* Ensure readability in night mode */
+}
+.btn-secondary:hover { background-color: var(--admin-button-secondary-hover-bg); }
+
+.btn-danger {
+    background-color: var(--admin-button-danger-bg);
+}
+.btn-danger:hover { background-color: var(--admin-button-danger-hover-bg); }
+
+.btn-warning {
+    background-color: #f39c12; /* Specific color, consider variable */
+    color: white;
+}
+.btn-warning:hover { background-color: #e67e22; }
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+.btn-disabled, .btn:disabled {
+    background-color: var(--admin-button-secondary-bg);
+    color: #7f8c8d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+body.admin-night-mode .btn-disabled, body.admin-night-mode .btn:disabled {
+    color: #aaa;
+}
+
+
+/* Forms */
+#add-edit-product-form-section h2, 
+#product-form h2 {
+    color: var(--admin-heading-color);
+    margin-bottom: 20px;
+}
+
+#product-form div, .toolbar div {
+    margin-bottom: 15px;
+}
+
+#product-form label, .toolbar label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--admin-text-color); /* Use text color */
+    opacity: 0.9;
+}
+
+#product-form input[type="text"],
+#product-form input[type="number"],
+#product-form input[type="file"],
+#product-form textarea,
+#product-form select,
+.toolbar input[type="text"],
+.toolbar select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--admin-input-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: var(--admin-input-bg);
+    color: var(--admin-input-text);
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+#product-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Toolbar */
+.toolbar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.toolbar input[type="text"] {
+    max-width: 300px;
+}
+
+/* Order Status Select in Table */
+.order-status-select {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid var(--admin-input-border);
+    background-color: var(--admin-input-bg);
+    color: var(--admin-input-text);
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* Admin Responsive Design (from previous step, ensure variables are used) */
+.admin-sidebar-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--admin-sidebar-text);
+    color: var(--admin-sidebar-text);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1100;
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        left: -250px;
+        z-index: 1000;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .admin-sidebar.sidebar-visible {
+        left: 0;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    }
+
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .admin-sidebar-toggle {
+        display: block;
+    }
+    
+    .admin-header {
+        padding-left: 15px; /* Reset if toggle moves inside header */
+    }
+    /* If sidebar toggle is outside header, ensure header doesn't overlap it */
+    body:not(.admin-sidebar-visible) .admin-header {
+        /* Potentially add padding-left if toggle button is fixed and outside admin-content */
+    }
+
+    .admin-header h1 {
+        font-size: 1.5em;
+    }
+    .admin-user-info {
+        font-size: 0.9em;
+    }
+    .admin-user-info span {
+        /* display: none; Consider if space is too tight */
+    }
+
+    .stats-cards {
+        flex-direction: column;
+    }
+    .stats-cards .card {
+        min-width: 0;
+        margin-bottom: 10px;
+    }
+
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .data-table th, .data-table td {
+        min-width: 120px;
+    }
+    .data-table .order-status-select {
+        min-width: 150px;
+    }
+
+    #product-form input[type="text"],
+    #product-form input[type="number"],
+    #product-form input[type="file"],
+    #product-form textarea,
+    #product-form select,
+    .toolbar input[type="text"],
+    .toolbar select {
+        font-size: 16px; /* Prevent iOS zoom */
+    }
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .toolbar input[type="text"], .toolbar select {
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .admin-header h1 {
+        margin-bottom: 10px;
+    }
+    .admin-user-info {
+        align-self: flex-start;
+        margin-top: 5px; /* Space between h1 and user info */
+    }
+    #admin-night-mode-toggle {
+        margin-bottom: 5px; /* Space if it wraps */
+    }
+    
+    .admin-sidebar {
+        width: 200px;
+        left: -200px;
+    }
+}

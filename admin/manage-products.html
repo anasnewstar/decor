@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products - Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html"><i class="icon-dashboard"></i> Dashboard Overview</a></li>
+                    <li><a href="manage-products.html" class="active"><i class="icon-box"></i> Product Management</a></li>
+                    <li><a href="manage-orders.html"><i class="icon-cart"></i> Order Management</a></li>
+                    <li><a href="manage-users.html"><i class="icon-users"></i> Customer Management</a></li>
+                    <li><a href="admin.html#sales-analytics"><i class="icon-graph"></i> Sales Analytics</a></li>
+                    <li><a href="../index.html" target="_blank"><i class="icon-logout"></i> View Main Site</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Product Management</h1>
+                <div class="admin-user-info">
+                    <span>Welcome, AdminUser!</span>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+
+            <section id="product-management" class="admin-section">
+                <div class="toolbar">
+                    <button class="btn btn-primary" id="show-add-product-form-btn">Add New Product</button>
+                </div>
+
+                <table class="data-table" id="products-table">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Stock Quantity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Placeholder Product 1 -->
+                        <tr data-id="P001">
+                            <td>P001</td>
+                            <td>Laptop Pro 15"</td>
+                            <td>$1200.00</td>
+                            <td>50</td>
+                            <td>
+                                <button class="btn btn-sm btn-edit">Edit</button>
+                                <button class="btn btn-sm btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Placeholder Product 2 -->
+                        <tr data-id="P002">
+                            <td>P002</td>
+                            <td>Wireless Mouse</td>
+                            <td>$25.00</td>
+                            <td>250</td>
+                            <td>
+                                <button class="btn btn-sm btn-edit">Edit</button>
+                                <button class="btn btn-sm btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Placeholder Product 3 -->
+                        <tr data-id="P003">
+                            <td>P003</td>
+                            <td>Ergonomic Keyboard</td>
+                            <td>$75.00</td>
+                            <td>120</td>
+                            <td>
+                                <button class="btn btn-sm btn-edit">Edit</button>
+                                <button class="btn btn-sm btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Add/Edit Product Form (Initially Hidden) -->
+            <section id="add-edit-product-form-section" class="admin-section" style="display:none;">
+                <h2 id="form-title">Add New Product</h2>
+                <form id="product-form">
+                    <input type="hidden" id="product-id" name="productId">
+                    <div>
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" name="productName" required>
+                    </div>
+                    <div>
+                        <label for="product-description">Description:</label>
+                        <textarea id="product-description" name="productDescription" rows="4"></textarea>
+                    </div>
+                    <div>
+                        <label for="product-price">Price:</label>
+                        <input type="number" id="product-price" name="productPrice" step="0.01" required>
+                    </div>
+                    <div>
+                        <label for="product-stock">Stock Quantity:</label>
+                        <input type="number" id="product-stock" name="productStock" required>
+                    </div>
+                    <div>
+                        <label for="product-category">Category:</label>
+                        <select id="product-category" name="productCategory">
+                            <option value="electronics">Electronics</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="apparel">Apparel</option>
+                            <option value="books">Books</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image:</label>
+                        <input type="file" id="product-image" name="productImage" accept="image/*">
+                        <img id="image-preview" src="#" alt="Image Preview" style="max-width: 100px; max-height: 100px; display: none; margin-top: 10px;">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Product</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-product-form-btn">Cancel</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="order-confirmation-message">
+                <h2>Thank You For Your Order!</h2>
+                <p>Your payment was successful and your order has been placed.</p>
+                <p>An email confirmation has been sent to your registered email address (mock).</p>
+
+                <h3>Order Summary:</h3>
+                <p><strong>Order Number:</strong> <span id="order-number">ORD-XXXXXX</span></p>
+                <p><strong>Items:</strong></p>
+                <ul id="ordered-items">
+                    <!-- Items will be populated by JavaScript -->
+                    <li>Product A (x1) - $19.99</li>
+                    <li>Product B (x2) - $40.00</li>
+                </ul>
+                <p><strong>Total Amount:</strong> <span id="order-total">$59.99</span></p>
+
+                <a href="products.html" class="btn">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderNumberEl = document.getElementById('order-number');
+            const orderedItemsEl = document.getElementById('ordered-items');
+            const orderTotalEl = document.getElementById('order-total');
+
+            const orderNumber = localStorage.getItem('orderNumber');
+            const orderItemsText = localStorage.getItem('orderItems'); // This is a simple text, needs parsing
+            const orderTotal = localStorage.getItem('orderTotal');
+
+            if (orderNumberEl) orderNumberEl.textContent = orderNumber || 'N/A';
+            if (orderTotalEl) orderTotalEl.textContent = orderTotal ? `$${orderTotal}` : '$0.00';
+            
+            if (orderedItemsEl && orderItemsText) {
+                orderedItemsEl.innerHTML = ''; // Clear placeholder
+                // Attempt to parse items if stored as a simple comma-separated string or similar
+                // For this mock-up, it was stored as a single text string.
+                const itemLi = document.createElement('li');
+                itemLi.textContent = orderItemsText; // Display the raw text from localStorage
+                orderedItemsEl.appendChild(itemLi);
+            } else if (orderedItemsEl) {
+                 orderedItemsEl.innerHTML = '<li>No items details available.</li>';
+            }
+
+            // It's good practice to clear these from localStorage after displaying them
+            // localStorage.removeItem('orderNumber');
+            // localStorage.removeItem('orderItems');
+            // localStorage.removeItem('orderTotal');
+            // localStorage.removeItem('cartItemsPreview');
+            // localStorage.removeItem('cartTotal'); // Or clear cart fully
+        });
+    </script>
+</body>
+</html>

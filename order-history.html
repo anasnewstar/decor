@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Your Order History</h2>
+            <p class="breadcrumb"><a href="account.html">Account</a> &gt; Order History</p>
+            <table class="order-history-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Placeholder Order 1 -->
+                    <tr>
+                        <td>ORD-2023-001</td>
+                        <td>2023-10-15</td>
+                        <td>$75.99</td>
+                        <td>Shipped</td>
+                        <td><a href="order-confirmation.html?orderId=ORD-2023-001" class="btn btn-sm">View Details</a></td>
+                    </tr>
+                    <!-- Placeholder Order 2 -->
+                    <tr>
+                        <td>ORD-2023-002</td>
+                        <td>2023-11-01</td>
+                        <td>$120.50</td>
+                        <td>Delivered</td>
+                        <td><a href="order-confirmation.html?orderId=ORD-2023-002" class="btn btn-sm">View Details</a></td>
+                    </tr>
+                    <!-- Placeholder Order 3 -->
+                    <tr>
+                        <td>ORD-2024-001</td>
+                        <td>2024-01-05</td>
+                        <td>$35.00</td>
+                        <td>Processing</td>
+                        <td><a href="order-confirmation.html?orderId=ORD-2024-001" class="btn btn-sm">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
